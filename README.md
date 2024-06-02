@@ -1,6 +1,6 @@
 # SMI-experiments
 
-This repository builds upon the [VanessB/Information-v3](https://github.com/VanessB/Information-v3) repository and its mutinfo library, thus you should install it beforehand. If you have some issues with installation, tou can try the installing from the fork [Pqlet/Information-v3](https://github.com/Pqlet/Information-v3.git).
+This repository builds upon the [VanessB/Information-v3](https://github.com/VanessB/Information-v3) repository and its mutinfo library, thus you should install it beforehand. If you have some issues with installation, tou can try installing from the fork [Pqlet/Information-v3](https://github.com/Pqlet/Information-v3.git).
 
 The `Synthetic_tests_SMI.ipynb` notebook measures sets experiments on the synthetic data, i.e. with known MI (Figures 1 and 2).
 
