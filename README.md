@@ -15,6 +15,8 @@ The `Plotting_MI_SMI.ipynb` notebook plots Figure 3.
 ![Figure 1](https://github.com/Pqlet/SMI-experiments/blob/main/images/comparison_runs.png)
 The correlation value is computed between the real MI values (red) and the corresponding estimated values.
 
+The synthetic experiments are conducted with the following parameters of the SMI and WKL estimator (Berrett et al. [2017]): #Projections is 2k, #Samples is 3k, number of neighbours in Weighted Kozachenko-Leonenko estimator (WKL) k = 5.
+
 ### Figure 2: Correlation of real $I$ and estimated $\hat{I}$ MI values over dimensionality of input vectors (averaged over 10 runs).
 ![Figure 2](https://github.com/Pqlet/SMI-experiments/blob/main/images/correlation_comparison_multiseed.png)
 Base estimator is the blue line, and the sliced version is orange. The raise of correlation on dimensionality of 75 is due to the high variance of the results, i.e. more runs for averaging are required to get a more precise picture.
