@@ -10,7 +10,7 @@ The MNIST notebooks `MNIST-SMI.ipynb` and `MNIST-AEMI.ipynb` measure SMI and AE+
 
 The `Plotting_MI_SMI.ipynb` notebook plots Figure 3.
 
-## Synthetic experiments
+## Results 
 ### Figure 1: Experiments with estimating MI of synthetic data. Base MI estimation (blue) is $\hat I(X,Y)$, and SMI estimation (orange) is $\hat I_{SMI}(X,Y)$.
 ![Figure 1](https://github.com/Pqlet/SMI-experiments/blob/main/images/comparison_runs.png)
 The correlation value is computed between the real MI values (red) and the corresponding estimated values.
@@ -19,7 +19,13 @@ The correlation value is computed between the real MI values (red) and the corre
 ![Figure 2](https://github.com/Pqlet/SMI-experiments/blob/main/images/correlation_comparison_multiseed.png)
 Base estimator is the blue line, and the sliced version is orange. The raise of correlation on dimensionality of 75 is due to the high variance of the results, i.e. more runs for averaging are required to get a more precise picture.
 
-# Implementation of the SMI
+### Figure 3: MNIST experiment
+
+![Figure 3](https://github.com/Pqlet/SMI-experiments/blob/main/images/mnist_comparison.png)
+
+MI between compressed with autoencoder representations (top) and SMI between uncompressed representations (bottom) during training a CNN classifier on MNIST dataset. SMI parameters: \#Projections is $1k$, \#Samples is $10k$. WKL MI estimator is employed with $k=25$. Overall, the experiment with training classification CNN and measuring SMI took more than 7 hours, which is times more than AE+MI estimation. However, this might be the inefficiency of my implementation. 
+
+## Implementation of the SMI
 The computation of SMI can be divided into 4 steps:
 1. Sample m random vectors from a multivariate normal distribution.
 2. Take Q matrix from QR decomposition of sampled vectors to get vectors uniformly distributed on a sphere.
@@ -50,12 +56,12 @@ class smi_compressor():
 
 The sampling is done in the while loop due to the restrictions on the Q matrix size (it becomes square of the smaller size of `vec`).
 
-# Conclusion 
+## Conclusion 
 
 Even the dimensionalities of 20 − 30 can already be considered "high-dimensional" for SMI, being rather small in modern Deep Learning. MI estimation with the autoencoder compression and direct MI estimation [2] is possible for simple datasets like MNIST, where the compression to the dimensionalities of less than 10 is doable. Slicing technique, in its turn, would allow to estimate the information measure for more complex datasets, where compression to the d < 10 is detrimental. The drawback of using slicing with MI estimation would be more computations and not exactly MI estimation, but a disparate metric that is similar to and highly correlates with it.
 
 
-# References
+## References
 [1] Z. Goldfeld and K. Greenewald, “Sliced Mutual Information: A Scalable Measure of Statistical Dependence.” arXiv, Oct. 18, 2021. doi: 10.48550/arXiv.2110.05279.
 
 [2] I. Butakov, A. Tolmachev, S. Malanchuk, A. Neopryatnaya, A. Frolov, and K. Andreev, “Information Bottleneck Analysis of Deep Neural Networks via Lossy Compression.” arXiv, May 13, 2023. doi: 10.48550/arXiv.2305.08013.
