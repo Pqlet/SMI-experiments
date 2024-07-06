@@ -18,7 +18,7 @@ The synthetic experiments are conducted with the following parameters of the SMI
 ![Figure 1](https://github.com/Pqlet/SMI-experiments/blob/main/images/comparison_runs.png)
 The correlation value is computed between the real MI values (red) and the corresponding estimated values.
 
-### Figure 2: Correlation of real $I$ and estimated $\hat{I}$ MI values over dimensionality of input vectors (averaged over 10 runs).
+### Figure 2: Correlation of real $I$ and estimated $\hat{I}$ MI values over dimensionality of input vectors (averaged over 10 runs) on synthetic data.
 ![Figure 2](https://github.com/Pqlet/SMI-experiments/blob/main/images/correlation_comparison_multiseed.png)
 Base estimator is the blue line, and the sliced version is orange. The raise of correlation on dimensionality of 75 is due to the high variance of the results, i.e. more runs for averaging are required to get a more precise picture.
 
