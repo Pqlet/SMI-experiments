@@ -11,8 +11,13 @@ The MNIST notebooks `MNIST-SMI.ipynb` and `MNIST-AEMI.ipynb` measure SMI and AE+
 The `Plotting_MI_SMI.ipynb` notebook plots Figure 3.
 
 ## Synthetic experiments
+### Figure 1: Experiments with estimating MI of synthetic data. Base MI estimation (blue) is $\hat I(X,Y)$, and SMI estimation (orange) is $\hat I_{SMI}(X,Y)$.
+![Figure 1](https://github.com/Pqlet/SMI-experiments/blob/main/images/comparison_runs.png)
+The correlation value is computed between the real MI values (red) and the corresponding estimated values.
 
-
+### Figure 2: Correlation of real $I$ and estimated $\hat{I}$ MI values over dimensionality of input vectors (averaged over 10 runs).
+![Figure 2](https://github.com/Pqlet/SMI-experiments/blob/main/images/correlation_comparison_multiseed.png)
+Base estimator is the blue line, and the sliced version is orange. The raise of correlation on dimensionality of 75 is due to the high variance of the results, i.e. more runs for averaging are required to get a more precise picture.
 
 # Implementation of the SMI
 The computation of SMI can be divided into 4 steps:
@@ -47,9 +52,11 @@ The sampling is done in the while loop due to the restrictions on the Q matrix s
 
 # Conclusion 
 
-SMi is a scalable measure for estimating mutual information (MI) in high-dimensional settings. Traditional MI estimation struggles with high-dimensional data due to the curse of dimensionality. SMI addresses this by averaging MI estimations over one-dimensional random projections, providing computational efficiency while retaining key properties of MI.
+Even the dimensionalities of 20 − 30 can already be considered "high-dimensional" for SMI, being rather small in modern Deep Learning. MI estimation with the autoencoder compression and direct MI estimation [2] is possible for simple datasets like MNIST, where the compression to the dimensionalities of less than 10 is doable. Slicing technique, in its turn, would allow to estimate the information measure for more complex datasets, where compression to the d < 10 is detrimental. The drawback of using slicing with MI estimation would be more computations and not exactly MI estimation, but a disparate metric that is similar to and highly correlates with it.
+
 
 # References
 [1] Z. Goldfeld and K. Greenewald, “Sliced Mutual Information: A Scalable Measure of Statistical Dependence.” arXiv, Oct. 18, 2021. doi: 10.48550/arXiv.2110.05279.
+
 [2] I. Butakov, A. Tolmachev, S. Malanchuk, A. Neopryatnaya, A. Frolov, and K. Andreev, “Information Bottleneck Analysis of Deep Neural Networks via Lossy Compression.” arXiv, May 13, 2023. doi: 10.48550/arXiv.2305.08013.
 
