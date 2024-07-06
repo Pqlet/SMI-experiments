@@ -11,11 +11,12 @@ The MNIST notebooks `MNIST-SMI.ipynb` and `MNIST-AEMI.ipynb` measure SMI and AE+
 The `Plotting_MI_SMI.ipynb` notebook plots Figure 3.
 
 ## Results 
+
+The synthetic experiments are conducted with the following parameters of the SMI and WKL estimator (Berrett et al. [2017]): #Projections is 2k, #Samples is 3k, number of neighbours in Weighted Kozachenko-Leonenko estimator (WKL) k = 5.
+
 ### Figure 1: Experiments with estimating MI of synthetic data. Base MI estimation (blue) is $\hat I(X,Y)$, and SMI estimation (orange) is $\hat I_{SMI}(X,Y)$.
 ![Figure 1](https://github.com/Pqlet/SMI-experiments/blob/main/images/comparison_runs.png)
 The correlation value is computed between the real MI values (red) and the corresponding estimated values.
-
-The synthetic experiments are conducted with the following parameters of the SMI and WKL estimator (Berrett et al. [2017]): #Projections is 2k, #Samples is 3k, number of neighbours in Weighted Kozachenko-Leonenko estimator (WKL) k = 5.
 
 ### Figure 2: Correlation of real $I$ and estimated $\hat{I}$ MI values over dimensionality of input vectors (averaged over 10 runs).
 ![Figure 2](https://github.com/Pqlet/SMI-experiments/blob/main/images/correlation_comparison_multiseed.png)
