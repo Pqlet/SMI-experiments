@@ -37,7 +37,7 @@ The computation of SMI can be divided into 4 steps:
 3. Take the dot product between sampled projection directions and input vectors.
 4. Calculate the MI between both projections of input vectors and take the average over m random projections.
 
-The implementation in python:
+The implementation of slicing in python:
 ```python
 import numpy as np
 
