@@ -24,11 +24,11 @@ The correlation value is computed between the real MI values (red) and the corre
 ![Figure 2](https://github.com/Pqlet/SMI-experiments/blob/main/images/correlation_comparison_multiseed.png)
 Base estimator is the blue line, and the sliced version is orange. The raise of correlation on dimensionality of 75 is due to the high variance of the results, i.e. more runs for averaging are required to get a more precise picture.
 
-### Figure 3: MNIST experiment
+### Figure 3: Information Plane of a CNN on MNIST
 
 ![Figure 3](https://github.com/Pqlet/SMI-experiments/blob/main/images/mnist_comparison.png)
 
-MI between compressed with autoencoder representations (top) and SMI between uncompressed representations (bottom) during training a CNN classifier on MNIST dataset. SMI parameters: \#Projections is $1k$, \#Samples is $10k$. WKL MI estimator is employed with $k=25$. Overall, the experiment with training classification CNN and measuring SMI took more than 7 hours, which is times more than AE+MI estimation. However, this might be the inefficiency of my implementation. 
+This figure shows the Information Plane during training, i.e. MI(L;Y) over MI(X;L), where L is the flattened hidden representation of a layer. MI between representations compressed (both X and L) with autoencoder (top) and SMI between uncompressed representations (bottom) during training a CNN classifier on MNIST dataset. SMI parameters: \#Projections is $1k$, \#Samples is $10k$. WKL MI estimator is employed with $k=25$. Overall, the experiment with training classification CNN and measuring SMI took more than 7 hours, which is times more than AE+MI estimation. However, this might be the inefficiency of my implementation. 
 
 ## Implementation of the SMI
 The computation of SMI can be divided into 4 steps:
